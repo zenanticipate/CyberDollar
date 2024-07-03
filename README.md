@@ -1,13 +1,13 @@
 <h1 align="center">
 <img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="CyberDollar" width="300"/>
 <br/><br/>
-CyberDollar Core [CYBER, Ð]  
+CyberDollar Core [CASH, ₡]  
 </h1>
 
 <div align="center">
 
-[![CyberDollarBadge](https://img.shields.io/badge/Cyber-Coin-yellow.svg)](https://cyberdollar.com)
-[![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://cyberdollar.com)
+[![CyberDollarBadge](https://img.shields.io/badge/Cyber-Coin-yellow.svg)](https://cyberchain.info)
+[![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://cyberchain.info)
 
 </div>
 
@@ -18,7 +18,7 @@ CyberDollar is a community-driven cryptocurrency that was inspired by a Shiba In
 For information about the default fees used on the CyberDollar network, please
 refer to the [fee recommendation](doc/fee-recommendation.md).
 
-**Website:** [cyberdollar.com](https://cyberdollar.com)
+**Website:** [cyberchain.info](https://cyberchain.info)
 
 ## Usage 💻
 
@@ -51,7 +51,7 @@ Main development resources:
   follow planned and in-progress work for upcoming releases.
 * [GitHub Discussion](https://github.com/cyberdollar/cyberdollar/discussions) is used
   to discuss features, planned and unplanned, related to both the development of
-  the CyberDollar Core software, the underlying protocols and the CYBER asset.  
+  the CyberDollar Core software, the underlying protocols and the CASH asset.  
 * [CyberDollardev subreddit](https://www.reddit.com/r/cyberdollardev/)
 
 ### Version strategy

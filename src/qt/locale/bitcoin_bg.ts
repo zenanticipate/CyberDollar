@@ -91,11 +91,11 @@
         <translation>Избор</translation>
     </message>
     <message>
-        <source>Such sending addresses</source>
+        <source>Sending addresses</source>
         <translation>Адреси за изпращане</translation>
     </message>
     <message>
-        <source>Much receiving addresses</source>
+        <source>Receiving addresses</source>
         <translation>Адреси за получаване</translation>
     </message>
     <message>
@@ -391,11 +391,11 @@
         <translation>Портфейл</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;Skypay</source>
         <translation>&amp;Изпращане</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;Income</source>
         <translation>&amp;Получаване</translation>
     </message>
     <message>
@@ -547,11 +547,11 @@
         <translation>Печатане на хартиени портфейли</translation>
     </message>
     <message>
-        <source>&amp;Such sending addresses...</source>
+        <source>&amp;Sending addresses...</source>
         <translation>Адреси за изпращане...</translation>
     </message>
     <message>
-        <source>&amp;Much receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>Адреси за получаване...</translation>
     </message>
     <message>
@@ -1564,7 +1564,7 @@ p, li { white-space: pre-wrap; }
         <translation>Зареди Хартиени Портфейли</translation>
     </message>
     <message>
-        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CYBER you wish to send to each wallet:</source>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CASH you wish to send to each wallet:</source>
         <translation>Принтирането на хартиени портфейли започна.&lt;br/&gt;Моля изчакайте порфейлите да се изпечатат напълно и удостоверете, че всичко е изпечатано правилно.&lt;br/&gt;Проверете за протекло или размазано мастило, неподравнености или други проблеми, които биха могли да направят секретните ключове нечетими.&lt;br/&gt;Сега въведете колко Доджкойни искате да изпратите на всеки един портфейл::</translation>
     </message>
     <message>

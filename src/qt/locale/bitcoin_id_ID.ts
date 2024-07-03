@@ -91,7 +91,7 @@
         <translation>&amp;Pilih</translation>
     </message>
     <message>
-        <source>Such sending addresses</source>
+        <source>Sending addresses</source>
         <translation>Alamat-alamat pengirim</translation>
     </message>
     <message>
@@ -131,7 +131,7 @@
         <translation>Terjadi kesalahan saat berusaha untuk menyimpan alamat ke dalam daftar %1. Mohon ulangi kembali.</translation>
     </message>
     <message>
-        <source>Much receiving addresses</source>
+        <source>Receiving addresses</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -287,7 +287,7 @@
         <translation>Tampilkan gambaran umum dompet Anda</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;Skypay</source>
         <translation>&amp;Kirim Aja</translation>
     </message>
     <message>
@@ -295,7 +295,7 @@
         <translation>Kirim koin ke alamat CyberDollar</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;Income</source>
         <translation>&amp;Terima Banget</translation>
     </message>
     <message>
@@ -403,7 +403,7 @@
         <translation>CyberDollar</translation>
     </message>
     <message>
-        <source>&amp;Much receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>&amp;Alamat-alamat untuk menerima...</translation>
     </message>
     <message>
@@ -593,7 +593,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Such sending addresses...</source>
+        <source>&amp;Sending addresses...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1554,8 +1554,8 @@
         <translation>Muat Dompet Kertas</translation>
     </message>
     <message>
-        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CYBER you wish to send to each wallet:</source>
-        <translation>Proses pencetakan dompet kertas telah dimulai.&lt;br/&gt;Harap tunggu sampai dompet sepenuhnya telah dicetak dan pastikan semua bagian sudah tercetak dengan benar.&lt;br/&gt;Periksa juga barangkali ada ketidak sejajaran, tinta bercampur, bercak, atau apapun yang membuat kunci privat tidak terbaca.&lt;br/&gt;Sekarang, masukan berapa banyak CYBER yang mau dikirim kesetiap dompet:</translation>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CASH you wish to send to each wallet:</source>
+        <translation>Proses pencetakan dompet kertas telah dimulai.&lt;br/&gt;Harap tunggu sampai dompet sepenuhnya telah dicetak dan pastikan semua bagian sudah tercetak dengan benar.&lt;br/&gt;Periksa juga barangkali ada ketidak sejajaran, tinta bercampur, bercak, atau apapun yang membuat kunci privat tidak terbaca.&lt;br/&gt;Sekarang, masukan berapa banyak CASH yang mau dikirim kesetiap dompet:</translation>
     </message>
     <message>
         <source>Paper wallet %1</source>

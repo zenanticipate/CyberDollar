@@ -91,11 +91,11 @@
         <translation>S&amp;eçiniz</translation>
     </message>
     <message>
-        <source>Such sending addresses</source>
+        <source>Sending addresses</source>
         <translation>Gönderilen adresler</translation>
     </message>
     <message>
-        <source>Much receiving addresses</source>
+        <source>Receiving addresses</source>
         <translation>Alım adresleri</translation>
     </message>
     <message>
@@ -399,11 +399,11 @@
         <translation>Cüzdan</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;Skypay</source>
         <translation>&amp;Gönder</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;Income</source>
         <translation>&amp;Al</translation>
     </message>
     <message>
@@ -593,11 +593,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Such sending addresses...</source>
+        <source>&amp;Sending addresses...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Much receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1574,7 +1574,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CYBER you wish to send to each wallet:</source>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CASH you wish to send to each wallet:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
