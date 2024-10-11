@@ -1,11 +1,11 @@
 ## Getting started
 
-This tutorial will help you to go through the basics to use CyberDollar Core after you completed the [installation instructions](/INSTALL.md). You now have `cyberdollard` or `cyberdollar-qt` executables available to run a node, and `cyberdollar-cli`/`cyberdollar-tx` tools to help you transact CYBER.
+This tutorial will help you to go through the basics to use CyberDollar Core after you completed the [installation instructions](/INSTALL.md). You now have `cyberdollard` or `cyberdollar-qt` executables available to run a node, and `cyberdollar-cli`/`cyberdollar-tx` tools to help you transact CASH.
 
 > **Note:** For simplicity, this guide assumes that executables can be found under the `PATH` environment variable.
 If needed, you can specify their location by typing `PATH=$PATH:/path/to/executables`, or prepend the full path to the command like:
 > ```console
-> shibetoshi:~$ /path/to/cyberdollar-cli [arguments ...]
+> cybertoshi:~$ /path/to/cyberdollar-cli [arguments ...]
 > ```
 
 ### Table of contents
@@ -28,12 +28,12 @@ If needed, you can specify their location by typing `PATH=$PATH:/path/to/executa
 
 To start your node, you can run an headless server using `cyberdollard`:
 ```console
-shibetoshi:~$ cyberdollard -daemon
+cybertoshi:~$ cyberdollard -daemon
 ```
 
 Or you can use the Graphical User Interface (GUI), `cyberdollar-qt`:
 ```console
-shibetoshi:~$ cyberdollar-qt
+cybertoshi:~$ cyberdollar-qt
 ```
 
 Detailed logging is recorded in `debug.log`, located in the [data directory](#data-directory).
@@ -53,24 +53,24 @@ To have an overview of the available commands, use the `help` command:
 
 ```console
 #List all commands
-shibetoshi:~$ cyberdollar-cli help
+cybertoshi:~$ cyberdollar-cli help
 
 #Get help for a specific command
-shibetoshi:~$ cyberdollar-cli help COMMAND
+cybertoshi:~$ cyberdollar-cli help COMMAND
 ```
 
 Some commands are different, but it's possible to use the [bitcoin RPC API documentation](https://developer.bitcoin.org/reference/rpc/).
 
 ### Creating a wallet
 
-To receive CYBER, you need an address that is securely derived from a private key through a series of automatic, cryptographic operations. The *address* can be shared with anyone to receive CYBER, but the *private key* is  sensitive information that allows anyone that knows it to spend the CYBER on the associated address.
+To receive CASH, you need an address that is securely derived from a private key through a series of automatic, cryptographic operations. The *address* can be shared with anyone to receive CASH, but the *private key* is  sensitive information that allows anyone that knows it to spend the CASH on the associated address.
 
 By default, the CyberDollar Core software will automatically create an address for you and securely store the private key in the wallet file.
 
 You can list wallet addresses using `getaddressesbyaccount`:
 
 ```console
-shibetoshi:~$ cyberdollar-cli getaddressesbyaccount ""
+cybertoshi:~$ cyberdollar-cli getaddressesbyaccount ""
 [
   "DA2fBazU8Y4epNJ2fQRZCcWpxKZY9HrhLN"
 ]
@@ -78,19 +78,19 @@ shibetoshi:~$ cyberdollar-cli getaddressesbyaccount ""
 
 Using `getnewaddress` will generate a new wallet address:
 ```console
-shibetoshi:~$ cyberdollar-cli getnewaddress
+cybertoshi:~$ cyberdollar-cli getnewaddress
 DNnGtXk9khadE7EKCmQzxjnehenX92PKAv
 ```
 
 Private keys are stored in the `wallet.dat` file. You can use `backupwallet` to save a copy:
 
 ```console
-shibetoshi:~$ cyberdollar-cli backupwallet /path/of/wallet/backup
+cybertoshi:~$ cyberdollar-cli backupwallet /path/of/wallet/backup
 ```
 
 **Tip:** CyberDollar addresses start with the letter `D`.
 
-You now have two wallet addresses to share with other people to receive CYBER! Consider avoiding [address reuse](https://en.bitcoin.it/wiki/Address_reuse) for anonymity and security reasons.
+You now have two wallet addresses to share with other people to receive CASH! Consider avoiding [address reuse](https://en.bitcoin.it/wiki/Address_reuse) for anonymity and security reasons.
 
 ### Verifying your balance
 
@@ -98,30 +98,30 @@ The total balance of all addresses held in your wallet can be found with the `ge
 
 ```console
 #Syntax
-shibetoshi:~$ cyberdollar-cli getbalance "*" minconf
+cybertoshi:~$ cyberdollar-cli getbalance "*" minconf
 ```
 
 `minconf` stands for minimum confirmations.
 For example, to see current balance with transaction having at least 5 confirmations:
 
 ```console
-shibetoshi:~$ cyberdollar-cli getbalance "*" 5
+cybertoshi:~$ cyberdollar-cli getbalance "*" 5
 421.552000
 ```
 
 ### Sending transactions
 
-CyberDollar implements the [Unspent Transaction Output (UTXO)](https://en.wikipedia.org/wiki/Unspent_transaction_output) model to track which amounts of coin belong to an address. Owning CYBER means that you know the private key(s) to addresses that are associated with unspent outputs. To spend them, you have to compose a new transaction that spends the value from currently unspent outputs to new outputs.
+CyberDollar implements the [Unspent Transaction Output (UTXO)](https://en.wikipedia.org/wiki/Unspent_transaction_output) model to track which amounts of coin belong to an address. Owning CASH means that you know the private key(s) to addresses that are associated with unspent outputs. To spend them, you have to compose a new transaction that spends the value from currently unspent outputs to new outputs.
 
 ##### sendtoaddress
 
 It's possible to use a single command to create, sign and send a transaction :
 ```console
 #Syntax
-shibetoshi:~$ cyberdollar-cli sendtoaddress address amount
+cybertoshi:~$ cyberdollar-cli sendtoaddress address amount
 
 #Example
-shibetoshi:~$ cyberdollar-cli sendtoaddress nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh 420
+cybertoshi:~$ cyberdollar-cli sendtoaddress nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh 420
 ```
 
 So much spending power !
@@ -134,10 +134,10 @@ This displays a list of UTXOs associated to addresses kept in the wallet.
 
 ```console
 #Syntax
-shibetoshi:~$ cyberdollar-cli listunspent minconf maxconf '["address", ...]'
+cybertoshi:~$ cyberdollar-cli listunspent minconf maxconf '["address", ...]'
 
 #Example
-shibetoshi:~$ cyberdollar-cli listunspent 1 9999999 '["nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P"]'
+cybertoshi:~$ cyberdollar-cli listunspent 1 9999999 '["nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P"]'
 [
   {
     "txid": "b869ed6606d52e6446dc12db02cf868ab693dd5b9f661116269536f0f8fa2433",
@@ -163,7 +163,7 @@ You can now build a new transaction using the available UTXOs from above.
 
 ```console
 #Syntax
-shibetoshi:~$ utxos_to_use='
+cybertoshi:~$ utxos_to_use='
   [
     {
       "txid": "id",
@@ -171,17 +171,17 @@ shibetoshi:~$ utxos_to_use='
     },
     ...
   ]'
-shibetoshi:~$ cyberdollar-cli createrawtransaction "$utxos_to_use" '{"address":amount, ...}'
+cybertoshi:~$ cyberdollar-cli createrawtransaction "$utxos_to_use" '{"address":amount, ...}'
 
 #Example
-shibetoshi:~$ utxos_to_use='
+cybertoshi:~$ utxos_to_use='
 [
   {
     "txid": "b869ed6606d52e6446dc12db02cf868ab693dd5b9f661116269536f0f8fa2433",
     "vout": 0
   }
 ]'
-shibetoshi:~$ cyberdollar-cli createrawtransaction "$utxos_to_use" '{"nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh":69, "nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P": 30.999}'
+cybertoshi:~$ cyberdollar-cli createrawtransaction "$utxos_to_use" '{"nWSYUqtimF7B6qW4GBdczaG6jvqKutS1Nh":69, "nnJDY1xCRgWQc7vBXHUPMPsEynuZW23Y3P": 30.999}'
 01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b80000000000ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000
 ```
 
@@ -195,10 +195,10 @@ Before sending a transaction, it must be signed by the private key that the addr
 
 ```console
 #Syntax
-shibetoshi:~$ cyberdollar-cli signrawtransaction encoded_transaction
+cybertoshi:~$ cyberdollar-cli signrawtransaction encoded_transaction
 
 #Example
-shibetoshi:~$ cyberdollar-cli signrawtransaction "01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b80000000000ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000"
+cybertoshi:~$ cyberdollar-cli signrawtransaction "01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b80000000000ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000"
 {
   "hex": "01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b8000000006a47304402200e1bf722d4335179de170f7c762755b463b3f7b8f026f30950f701bc834f0e6e022036295fdd5e607ca41c4e0e62e59d0911b607bfabedde2424665ffae13564d0e001210388f8f226d12eccd3ba93c1454ec4498b065cea96e29b918fbdb517872ebbf581ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000",
   "complete": true
@@ -211,10 +211,10 @@ Finally, broadcast the transaction to the network so that it can be included in 
 
 ```console
 #Syntax
-shibetoshi:~$ cyberdollar-cli sendrawtransaction signed_transaction
+cybertoshi:~$ cyberdollar-cli sendrawtransaction signed_transaction
 
 #Example
-shibetoshi:~$ cyberdollar-cli sendrawtransaction 01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b8000000006a47304402200e1bf722d4335179de170f7c762755b463b3f7b8f026f30950f701bc834f0e6e022036295fdd5e607ca41c4e0e62e59d0911b607bfabedde2424665ffae13564d0e001210388f8f226d12eccd3ba93c1454ec4498b065cea96e29b918fbdb517872ebbf581ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000
+cybertoshi:~$ cyberdollar-cli sendrawtransaction 01000000013324faf8f03695261611669f5bdd93b68a86cf02db12dc46642ed50666ed69b8000000006a47304402200e1bf722d4335179de170f7c762755b463b3f7b8f026f30950f701bc834f0e6e022036295fdd5e607ca41c4e0e62e59d0911b607bfabedde2424665ffae13564d0e001210388f8f226d12eccd3ba93c1454ec4498b065cea96e29b918fbdb517872ebbf581ffffffff0200a5459b010000001976a91418a89ee36293f15c4db4c01173babd579243161188ac60b8c4b8000000001976a914c6977da37560e1432c2e14e16952981a4c272cac88ac00000000
 b4fae2a43cb35f8016a547e9658e061f1da4a043efafecc42f739d46d95dee21
 ```
 
@@ -229,11 +229,11 @@ First, request the information about block 69:
 
 ```console
 #Find block hash from his height
-shibetoshi:~$ cyberdollar-cli getblockhash 69
+cybertoshi:~$ cyberdollar-cli getblockhash 69
 3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b
 
 #Get block data
-shibetoshi:~$ cyberdollar-cli getblock 3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b
+cybertoshi:~$ cyberdollar-cli getblock 3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b
 {
   "hash": "3d2def20cd0d3aca148741ef469bda11647a3040d7669c82745d03c728706a8b",
   "confirmations": 7816,
@@ -264,10 +264,10 @@ We can see the entire transaction by querying for its identifier:
 
 ```console
 #Syntax
-shibetoshi:~$ cyberdollar-cli getrawtransaction txid verbose
+cybertoshi:~$ cyberdollar-cli getrawtransaction txid verbose
 
 #Example
-shibetoshi:~$ cyberdollar-cli getrawtransaction 695ce4208fa7a87ef9e99805b0910dc129058ecdceb5cef7e25f71dcdc7936db 1
+cybertoshi:~$ cyberdollar-cli getrawtransaction 695ce4208fa7a87ef9e99805b0910dc129058ecdceb5cef7e25f71dcdc7936db 1
 {
   "hex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0e04d9eea3520101062f503253482fffffffff0100ac6156be23000023210340a42a5ad6c4c0cd5ae539657032e0a359bd3e0f95771f34d71691b13460a624ac00000000",
   "txid": "695ce4208fa7a87ef9e99805b0910dc129058ecdceb5cef7e25f71dcdc7936db",
@@ -314,7 +314,7 @@ Using `cyberdollard -help` will display all available configuration parameters t
 
 **Command example :**
 ```console
-shibetoshi:~$ cyberdollard -daemon -paytxfee=0.01 -sendfreetransactions=1 -maxconnections=150
+cybertoshi:~$ cyberdollard -daemon -paytxfee=0.01 -sendfreetransactions=1 -maxconnections=150
 ```
 
 Configuration can be persisted by creating a `cyberdollar.conf` file. Create it in the directory defined with the `datadir` setting, `$HOME/.cyberdollar` by default, or specify the file location with `-conf`.

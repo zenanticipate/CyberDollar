@@ -91,7 +91,7 @@
         <translation>&amp;Elekti</translation>
     </message>
     <message>
-        <source>Such sending addresses</source>
+        <source>Sending addresses</source>
         <translation>Sendaj adresoj</translation>
     </message>
     <message>
@@ -135,7 +135,7 @@
         <translation>Okazis eraron dum konservo de adreslisto al %1. Bonvolu provi denove.</translation>
     </message>
     <message>
-        <source>Much receiving addresses</source>
+        <source>Receiving addresses</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -336,7 +336,7 @@
     </message>
     <message>
         <source>Such &amp;sending addresses...</source>
-        <translation type="vanished">&amp;Such Sendaj adresoj...</translation>
+        <translation type="vanished">&amp;Skypayaj adresoj...</translation>
     </message>
     <message>
         <source>Much &amp;receiving addresses...</source>
@@ -383,11 +383,11 @@
         <translation>Monujo</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
-        <translation>&amp;Such Sendi</translation>
+        <source>&amp;Skypay</source>
+        <translation>&amp;Skypayi</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;Income</source>
         <translation>&amp;Ricevi</translation>
     </message>
     <message>
@@ -545,11 +545,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Such sending addresses...</source>
+        <source>&amp;Sending addresses...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Much receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1586,7 +1586,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CYBER you wish to send to each wallet:</source>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CASH you wish to send to each wallet:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

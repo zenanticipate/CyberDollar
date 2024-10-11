@@ -91,11 +91,11 @@
         <translation>K&amp;iezen</translation>
     </message>
     <message>
-        <source>Such sending addresses</source>
+        <source>Sending addresses</source>
         <translation>Verzendadressen</translation>
     </message>
     <message>
-        <source>Much receiving addresses</source>
+        <source>Receiving addresses</source>
         <translation>Ontvangstadressen</translation>
     </message>
     <message>
@@ -343,11 +343,11 @@
         <translation>&amp;Wijzig Wachtwoord</translation>
     </message>
     <message>
-        <source>&amp;Such sending addresses...</source>
+        <source>&amp;Sending addresses...</source>
         <translation>&amp;Verstuuradressen...</translation>
     </message>
     <message>
-        <source>&amp;Much receiving addresses...</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>&amp;Ontvang adressen...</translation>
     </message>
     <message>
@@ -407,11 +407,11 @@
         <translation>Portemonnee</translation>
     </message>
     <message>
-        <source>&amp;Such Send</source>
+        <source>&amp;Skypay</source>
         <translation>&amp;Verstuur</translation>
     </message>
     <message>
-        <source>&amp;Much Receive</source>
+        <source>&amp;Income</source>
         <translation>&amp;Ontvangen</translation>
     </message>
     <message>
@@ -1578,8 +1578,8 @@ p, li { white-space: pre-wrap; }
         <translation>Papieren portemonnee laden</translation>
     </message>
     <message>
-        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CYBER you wish to send to each wallet:</source>
-        <translation>Het printproces van de papieren portemonnee is begonnen.&lt;br/&gt;Wacht tot de portemonnees volledig zijn afgedrukt en controleer of alles correct is afgedrukt.&lt;br/&gt;Controleer op verkeerde uitlijning, inktuitvloeiing, vegen of iets anders dat de privésleutels onleesbaar kan maken.&lt;br/&gt;Voer nu het aantal CYBER in dat u naar elke portemonnee wilt verzenden:</translation>
+        <source>The paper wallet printing process has begun.&lt;br/&gt;Please wait for the wallets to print completely and verify that everything printed correctly.&lt;br/&gt;Check for misalignments, ink bleeding, smears, or anything else that could make the private keys unreadable.&lt;br/&gt;Now, enter the number of CASH you wish to send to each wallet:</source>
+        <translation>Het printproces van de papieren portemonnee is begonnen.&lt;br/&gt;Wacht tot de portemonnees volledig zijn afgedrukt en controleer of alles correct is afgedrukt.&lt;br/&gt;Controleer op verkeerde uitlijning, inktuitvloeiing, vegen of iets anders dat de privésleutels onleesbaar kan maken.&lt;br/&gt;Voer nu het aantal CASH in dat u naar elke portemonnee wilt verzenden:</translation>
     </message>
     <message>
         <source>Paper wallet %1</source>

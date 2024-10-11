@@ -1,13 +1,13 @@
 <h1 align="center">
-CyberDollar Core [CYBER, Ð]  
+CyberDollar Core [CASH, ₡]  
 <br/><br/>
 <img src="https://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png" alt="CyberDollar" width="300"/>
 </h1>
 
 <div align="center">
 
-[![CyberDollarBadge](https://img.shields.io/badge/Cyber-Coin-yellow.svg)](https://cyberdollar.com)
-[![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://cyberdollar.com)
+[![CyberDollarBadge](https://img.shields.io/badge/Cyber-Coin-yellow.svg)](https://cyberchain.info)
+[![MuchWow](https://img.shields.io/badge/Much-Wow-yellow.svg)](https://cyberchain.info)
 
 </div>
 
@@ -21,7 +21,7 @@ Select language: [EN](./README.md) | [CN](./README_zh_CN.md) | [PT](./README_pt_
 [پیشنهادهای هزینه‌ای](doc/fee-recommendation.md)
 مراجعه نمایید.
 
-**سایت اینترنتی:** [cyberdollar.com](https://cyberdollar.com)
+**سایت اینترنتی:** [cyberchain.info](https://cyberchain.info)
 
 ## استفاده 💻
 
@@ -55,7 +55,7 @@ Select language: [EN](./README.md) | [CN](./README_zh_CN.md) | [PT](./README_pt_
 منابع اصلی توسعه:
 
 - [پروژه‌های Github](https://github.com/cyberdollar/cyberdollar/projects) به منظور پیگیری کارهای برنامه‌ریزی‌شده و دردست‌اقدام برای نسخه‌های آتی استفاده می‌شوند.
-- [مباحث در Github](https://github.com/cyberdollar/cyberdollar/discussions) به منظور مورد بحث قرار دادن شاخصه‌های برنامه‌ریزی‌شده و نشده‌ی نرم‌افزار CyberDollar Core، پروتکل‌های زیربنایی آن و دارایی CYBER مورد استفاده قرار می‌گیرد.
+- [مباحث در Github](https://github.com/cyberdollar/cyberdollar/discussions) به منظور مورد بحث قرار دادن شاخصه‌های برنامه‌ریزی‌شده و نشده‌ی نرم‌افزار CyberDollar Core، پروتکل‌های زیربنایی آن و دارایی CASH مورد استفاده قرار می‌گیرد.
 - [زیرقسمت CyberDollardev در سایت Reddit](https://www.reddit.com/r/cyberdollardev/)
 
 ### استراتژی نسخه‌گذاری
