@@ -9,156 +9,88 @@ on:
       - develop
 
 jobs:
-  prepare-source:
-    name: Prepare Source Distribution
-    runs-on: ubuntu-20.04
-    env:
-      ARTIFACT_DIR: ./source
+  build-linux:
+    name: Build Linux Binaries
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Source
-        uses: actions/checkout@v2
-      - name: Install Dependencies
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config \
           libssl-dev libevent-dev bsdmainutils python3 \
-          libboost-all-dev \
-          libdb5.3-dev libdb5.3++-dev \
-          libminiupnpc-dev \
-          libzmq3-dev \
-          libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools \
-          libprotobuf-dev protobuf-compiler libqrencode-dev
-      - name: Generate Source Tarball
+          libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev \
+          libdb-dev libdb++-dev libzmq3-dev
+
+      - name: Build Source
         run: |
           ./autogen.sh
-          ./configure --with-incompatible-bdb --with-miniupnpc
-          make dist
-      - name: Download Build Dependencies
-        run: make -C depends download
-      - name: Create Artifact Tarballs
-        run: |
-          mkdir -p $ARTIFACT_DIR
-          mv depends.tar.gz cyberdollar-*.tar.gz $ARTIFACT_DIR
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: source-distribution
-          path: ${{ env.ARTIFACT_DIR }}
+          ./configure
+          mkdir -p build/linux  # Ensure the directory exists for output
+          make
 
-  build-linux:
-    name: Build for Linux
-    needs: prepare-source
-    runs-on: ubuntu-20.04
-    env:
-      ARTIFACT_DIR: linux-binaries
-    steps:
-      - name: Download Source
-        uses: actions/download-artifact@v4
-        with:
-          name: source-distribution
-      - name: Extract Source
-        run: |
-          tar -xzf depends.tar.gz
-          tar -xzf cyberdollar-*.tar.gz --strip-components=1
-        working-directory: source
-      - name: Build Dependencies
-        run: make -C depends -j$(nproc)
-        working-directory: source
-      - name: Compile Cyberdollar
-        run: |
-          ./configure --prefix=$(realpath depends/x86_64-pc-linux-gnu)
-          make -j$(nproc)
-        working-directory: source
-      - name: Prepare Linux Binaries
-        run: |
-          mkdir -p $ARTIFACT_DIR
-          mv source/src/{cyberdollar-cli,cyberdollar-tx,cyberdollard,qt/cyberdollar-qt} $ARTIFACT_DIR
-      - name: Upload Linux Binaries
-        uses: actions/upload-artifact@v4
+      - name: Upload Binaries
+        uses: actions/upload-artifact@v3
         with:
           name: linux-binaries
-          path: ${{ env.ARTIFACT_DIR }}
+          path: build/linux
 
   build-windows:
-    name: Build for Windows
-    needs: prepare-source
-    runs-on: ubuntu-20.04
-    env:
-      ARTIFACT_DIR: windows-binaries
+    name: Build Windows Binaries
+    runs-on: ubuntu-latest
     steps:
-      - name: Download Source
-        uses: actions/download-artifact@v4
-        with:
-          name: source-distribution
-      - name: Extract Source
-        run: |
-          tar -xzf depends.tar.gz
-          tar -xzf cyberdollar-*.tar.gz --strip-components=1
-        working-directory: source
-      - name: Install MinGW
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup MinGW
         run: |
           sudo apt-get update
-          sudo apt-get install -y g++-mingw-w64-x86-64 gcc-mingw-w64-x86-64
-      - name: Configure MinGW for POSIX
+          sudo apt-get install -y g++-mingw-w64-x86-64
+
+      - name: Configure MinGW
         run: |
           sudo update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix
           sudo update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
-      - name: Build Dependencies
-        run: make -C depends HOST=x86_64-w64-mingw32 -j$(nproc)
-        working-directory: source
-      - name: Compile Cyberdollar
+
+      - name: Build Source
         run: |
-          ./configure --prefix=$(realpath depends/x86_64-w64-mingw32)
-          make -j$(nproc)
-        working-directory: source
-      - name: Prepare Windows Binaries
-        run: |
-          mkdir -p $ARTIFACT_DIR
-          mv source/src/{cyberdollar-cli.exe,cyberdollar-tx.exe,cyberdollard.exe,qt/cyberdollar-qt.exe} $ARTIFACT_DIR
-      - name: Upload Windows Binaries
-        uses: actions/upload-artifact@v4
+          ./autogen.sh
+          ./configure --host=x86_64-w64-mingw32
+          mkdir -p build/windows  # Ensure the directory exists for output
+          make
+
+      - name: Upload Binaries
+        uses: actions/upload-artifact@v3
         with:
           name: windows-binaries
-          path: ${{ env.ARTIFACT_DIR }}
+          path: build/windows
 
   build-macos:
-    name: Build for macOS
-    needs: prepare-source
-    runs-on: ubuntu-20.04
-    env:
-      ARTIFACT_DIR: macos-binaries
-      MACOS_SDK_URL: https://bitcoincore.org/depends-sources/sdks/MacOSX10.11.sdk.tar.gz
+    name: Build macOS Binaries
+    runs-on: ubuntu-latest
     steps:
-      - name: Download Source
-        uses: actions/download-artifact@v4
-        with:
-          name: source-distribution
-      - name: Extract Source
-        run: |
-          tar -xzf depends.tar.gz
-          tar -xzf cyberdollar-*.tar.gz --strip-components=1
-        working-directory: source
-      - name: Install Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils \
-          curl ccache python3 rsync git procps bison cmake imagemagick libcap-dev librsvg2-bin libz-dev libtiff-tools
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
       - name: Setup macOS SDK
         run: |
-          mkdir -p source/depends/SDKs
-          curl -L -o source/depends/SDKs/MacOSX10.11.sdk.tar.gz ${{ env.MACOS_SDK_URL }}
-          tar -C source/depends/SDKs -xf source/depends/SDKs/MacOSX10.11.sdk.tar.gz
-      - name: Build Dependencies
-        run: make -C depends HOST=x86_64-apple-darwin11 -j$(nproc)
-        working-directory: source
-      - name: Compile Cyberdollar
+          sudo apt-get update
+          sudo apt-get install -y curl make tar
+          curl -O https://bitcoincore.org/depends-sources/sdks/MacOSX10.11.sdk.tar.gz
+          mkdir -p depends/SDKs
+          tar -C depends/SDKs -xzf MacOSX10.11.sdk.tar.gz
+
+      - name: Build Source
         run: |
-          ./configure --prefix=$(realpath depends/x86_64-apple-darwin11) --enable-gui=qt5
-          make deploy
-          mv cyberdollar-Core.dmg cyberdollar.dmg
-        working-directory: source
-      - name: Upload macOS Binary
-        uses: actions/upload-artifact@v4
+          ./autogen.sh
+          ./configure --host=x86_64-apple-darwin
+          mkdir -p build/macos  # Ensure the directory exists for output
+          make
+
+      - name: Upload Binaries
+        uses: actions/upload-artifact@v3
         with:
           name: macos-binaries
-          path: cyberdollar.dmg
+          path: build/macos
